@@ -1,5 +1,24 @@
 # Tiny-BDD
 
+<p align="center">
+    <img alt="GitHub License" src="https://img.shields.io/github/license/ImJimmi/tiny-bdd?style=for-the-badge">
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/c++17-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white"/>
+    <img src="https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white"/>
+</p>
+
+<p align="center">
+    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/ImJimmi/tiny-bdd/test.yml?style=for-the-badge&logo=c%2B%2B&label=Tests">
+</p>
+
+<p align="center">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ImJimmi/tiny-bdd?style=for-the-badge&logo=github&color=gold">
+    <img src="https://img.shields.io/github/contributors/ImJimmi/tiny-bdd?logo=github&style=for-the-badge"/>
+    <img src="https://img.shields.io/github/last-commit/ImJimmi/tiny-bdd?logo=git&logoColor=white&style=for-the-badge"/>
+</p>
+
 A tiny single-header BDD-style testing framework for C++17.
 
 Sometimes you just want a quick and easy way to test something. Maybe it's in a temporary project, or a demo project, somewhere where you don't want to faff around with large testing frameworks like [Catch2](https://github.com/catchorg/Catch2) or [GoogleTest](https://github.com/google/googletest). Tiny-BDD is designed to allow you to write good quality, well-documented tests with absolutely minimal effort.
