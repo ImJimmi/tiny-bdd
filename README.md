@@ -108,6 +108,20 @@ return tbdd::test("transforming chars to ints")
           });
 ```
 
+When these tests fail, their output is very verbose making it easy to find the problem:
+
+```txt
+[FAILED] TEST transforming chars to ints
+  GIVEN some chars to be transformed and a container to transform them into
+    WHEN the chars are converted to ints
+      THEN the output container contains the integer values of the chars
+
+[FAILED] TEST transforming chars to ints
+  GIVEN some chars to be transformed and a container to transform them into
+    WHEN we resize the output to 3
+      THEN only the most recent alteration is applied
+```
+
 See [the Tiny BDD tests](./test.cpp) for more examples.
 
 ## Integration
