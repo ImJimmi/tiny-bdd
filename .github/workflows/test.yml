@@ -1,0 +1,31 @@
+name: Run Tests
+
+on:
+    pull_request:
+        branches: [main]
+    push:
+        branches: [main]
+
+jobs:
+    test:
+        name: Run Tests
+
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Build & Test
+              run: |
+                  cmake -B build -DTBDD_GENERATE_TEST_RUNNER=ON && \
+                  cmake --build build && \
+                  ctest --test-dir build --verbose -C Debug -O ctest.log
+
+            - name: Upload Test Results
+              uses: actions/upload-artifact@v4
+              with:
+                  path: build/ctest.log
+                  if-no-files-found: ignore
+                  retention-days: 7
+                  overwrite: true
