@@ -8,9 +8,22 @@ on:
 
 jobs:
     test:
-        name: Run Tests
+        strategy:
+            matrix:
+                runner:
+                    - ubuntu-latest
+                    - windows-latest
+                    - macos-latest
+                include:
+                    - runner: ubuntu-latest
+                      platform: Linux
+                    - runner: windows-latest
+                      platform: Windows
+                    - runner: macos-latest
+                      platform: macOS
 
-        runs-on: ubuntu-latest
+        name: (${{ matrix.platform }}) Run Tests
+        runs-on: ${{ matrix.runner }}
 
         steps:
             - name: Checkout
@@ -20,7 +33,7 @@ jobs:
               run: |
                   cmake -B build -DTBDD_GENERATE_TEST_RUNNER=ON && \
                   cmake --build build && \
-                  ctest --test-dir build --verbose -C Debug -O ctest.log
+                  ctest --test-dir build --verbose -C Debug -O ${{ matrix.platform }}.ctest.log
 
             - name: Upload Test Results
               uses: actions/upload-artifact@v4
