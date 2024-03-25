@@ -24,6 +24,9 @@ jobs:
 
         name: (${{ matrix.platform }}) Run Tests
         runs-on: ${{ matrix.runner }}
+        defaults:
+            run:
+                shell: bash
 
         steps:
             - name: Checkout
