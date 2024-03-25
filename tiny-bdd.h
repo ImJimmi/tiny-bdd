@@ -20,7 +20,7 @@ namespace tbdd
         static constexpr auto indent = "  ";
         std::string currentIndent{ indent };
 
-        for (const auto& [messagePart, title] : std::vector{
+        for (const auto& [messagePart, title] : std::vector<std::pair<std::string, std::string>>{
                  std::make_pair(message.given, "GIVEN"),
                  std::make_pair(message.when, "WHEN"),
                  std::make_pair(message.then, "THEN"),
