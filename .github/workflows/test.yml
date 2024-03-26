@@ -34,7 +34,8 @@ jobs:
 
             - name: Build & Test
               run: |
-                  cmake -B build -DTBDD_GENERATE_TEST_RUNNER=ON && \
+                  python -m pip install ninja
+                  cmake -B build -G Ninja -DTBDD_GENERATE_TEST_RUNNER=ON && \
                   cmake --build build && \
                   ctest --test-dir build --verbose -C Debug -O ${{ matrix.platform }}.ctest.log
 
